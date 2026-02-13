@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9ef3781c50f75ea44a05d795262dcb23
+guid: bf7ed6933843e8145bdcb4a8a15463d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7231397756056891845
-    second: Officedoor-Sheet_0
-  - first:
-      213: 1727650304383291171
-    second: Officedoor-Sheet_1
+      213: 1799822134033575121
+    second: Keycard_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Officedoor-Sheet_0
+      name: Keycard_1_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 31
-        width: 31
-        height: 52
+        x: 5
+        y: 16
+        width: 54
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3e0ca0fd0ae4ab90800000000000000
-      internalID: -7231397756056891845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Officedoor-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 31
-        width: 31
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32f8cd06cc8d9f710800000000000000
-      internalID: 1727650304383291171
+      spriteID: 1dce4fde1b04af810800000000000000
+      internalID: 1799822134033575121
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Officedoor-Sheet_0: -7231397756056891845
-      Officedoor-Sheet_1: 1727650304383291171
+      Keycard_1_0: 1799822134033575121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
