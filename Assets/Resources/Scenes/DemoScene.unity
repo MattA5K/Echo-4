@@ -215,12 +215,12 @@ GameObject:
   - component: {fileID: 517630795}
   - component: {fileID: 517630794}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Inventory Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &517630793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1930531485}
   - {fileID: 1850454861}
   - {fileID: 1242816682}
   - {fileID: 2133143563}
@@ -775,17 +776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteraction
   isInteractable: 1
   spriteRenderer: {fileID: 842058507}
---- !u!114 &872206574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4711359885715667769, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-  m_PrefabInstance: {fileID: 7710909683189564768}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49c688cb533e4c408d63dc2b5d9499c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionDetector
 --- !u!1 &939296883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1482,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1434221071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8385269772456411040, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
+  m_PrefabInstance: {fileID: 7710909683189564768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1434221078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434221071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32079c2781598594a849f83c9ee15dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventoryToggle
+  inventoryPanel: {fileID: 517630792}
 --- !u!1 &1610444050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +1967,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
   itemIcon: {fileID: 1782078044}
+--- !u!1 &1930531484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930531485}
+  - component: {fileID: 1930531487}
+  - component: {fileID: 1930531486}
+  m_Layer: 5
+  m_Name: HumanFigure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1930531485
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930531484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 517630793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000038624, y: -6.6075}
+  m_SizeDelta: {x: 410.749, y: 662.17}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1930531486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930531484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2576149102878362559, guid: 26092bbf2df0f7145b05ab504419916d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1930531487
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930531484}
+  m_CullTransparentMesh: 1
 --- !u!1 &2108850355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_ActionId
@@ -2263,6 +2346,10 @@ PrefabInstance:
       value: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
       objectReference: {fileID: 0}
     - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: 21d82ff1-dae9-4e9b-97a8-bbbf88f50c2e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_ActionName
       value: 'Player/Previous[/Keyboard/1]'
       objectReference: {fileID: 0}
@@ -2315,32 +2402,8 @@ PrefabInstance:
       value: UI/TrackedDeviceOrientation
       objectReference: {fileID: 0}
     - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 872206574}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnInteract
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InteractionDetector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377135769432791541, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: 'UI/OpenInventory[/Keyboard/tab]'
       objectReference: {fileID: 0}
     - target: {fileID: 5819057125345441698, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2393,7 +2456,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8385269772456411040, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1434221078}
   m_SourcePrefab: {fileID: 100100000, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
