@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Keycard_1
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Sector 2 Keycard
-  icon: {fileID: 0}
+  icon: {fileID: 1799822134033575121, guid: bf7ed6933843e8145bdcb4a8a15463d0, type: 3}
+  compatibleSlots: 
