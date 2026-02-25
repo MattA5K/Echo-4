@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,12 +9,16 @@ public class PlayerInventoryToggle : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction openInventoryAction;
 
+    public static PlayerInventoryToggle Instance;
+
     private void Awake()
     {
+        Instance = this;
+
         playerInput = GetComponent<PlayerInput>();
 
         openInventoryAction = playerInput.actions.FindActionMap("UI").FindAction("OpenInventory");
-        
+
     }
 
     private void OnEnable()
@@ -34,7 +39,17 @@ public class PlayerInventoryToggle : MonoBehaviour
     {
         inventoryPanel.SetActive(true);
     }
-    private void OnOpenInventoryClose (InputAction.CallbackContext context)
+    private void OnOpenInventoryClose(InputAction.CallbackContext context)
+    {
+        inventoryPanel.SetActive(false);
+    }
+
+    public void ShowInventory()
+    {
+        inventoryPanel.SetActive(true);
+    }
+
+    public void HideInventory()
     {
         inventoryPanel.SetActive(false);
     }

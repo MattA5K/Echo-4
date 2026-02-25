@@ -25,6 +25,8 @@ public class InteractionDetector : MonoBehaviour
         {
             interactableInRange = interactable;
             interactionIcon.SetActive(true);
+
+            
         }
     }
 
@@ -34,6 +36,8 @@ public class InteractionDetector : MonoBehaviour
         {
             interactableInRange = null;
             interactionIcon.SetActive(false);
+            GrabUIManager.Instance.HideGrabPanel();
+            PlayerInventoryToggle.Instance.HideInventory();
         }
     }
 }

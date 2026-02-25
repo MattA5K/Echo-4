@@ -18,7 +18,16 @@ public class GrabUIManager : MonoBehaviour
     public void ShowGrabPanel(ItemData data)
     {
         itemIcon.sprite = data.icon;
+        itemIcon.SetNativeSize();
         itemText.text = data.itemName;
         grabPanel.SetActive(true);
+    }
+
+    public void HideGrabPanel()
+    {
+        grabPanel.SetActive(false);
+        itemIcon.sprite = null;
+        itemText.text = string.Empty;
+
     }
 }

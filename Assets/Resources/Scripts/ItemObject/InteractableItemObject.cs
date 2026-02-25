@@ -9,6 +9,7 @@ public class InteractableItemObject : MonoBehaviour, IInteractable
     {
         Debug.Log("Interacting with item");
         GrabUIManager.Instance.ShowGrabPanel(itemData);
+        PlayerInventoryToggle.Instance.ShowInventory();
     }
 
     public bool CanInteract()
