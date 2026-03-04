@@ -31,7 +31,7 @@ public class PlayerInventoryToggle : MonoBehaviour
     private void OnDisable()
     {
         openInventoryAction.performed -= OnOpenInventoryOpen;
-        openInventoryAction.canceled += OnOpenInventoryClose;
+        openInventoryAction.canceled -= OnOpenInventoryClose;
         openInventoryAction.Disable();
     }
 
@@ -42,6 +42,8 @@ public class PlayerInventoryToggle : MonoBehaviour
     private void OnOpenInventoryClose(InputAction.CallbackContext context)
     {
         inventoryPanel.SetActive(false);
+        GrabUIManager.Instance.HideGrabPanel();
+
     }
 
     public void ShowInventory()

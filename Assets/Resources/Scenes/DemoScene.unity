@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -370,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6183964, y: -0.21359, z: -10}
+  m_LocalPosition: {x: 1.6183989, y: -0.21359, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -408,6 +409,22 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.Physics2DRaycaster
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &565614434
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1031,7 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1066,6 +1083,7 @@ GameObject:
   - component: {fileID: 1064622835}
   - component: {fileID: 1064622837}
   - component: {fileID: 1064622836}
+  - component: {fileID: 1064622838}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1130,6 +1148,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064622834}
   m_CullTransparentMesh: 1
+--- !u!114 &1064622838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064622834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4826761095e0c5040912279419e1f201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
 --- !u!1 &1099738625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,24 +1793,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1434221071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8385269772456411040, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-  m_PrefabInstance: {fileID: 7710909683189564768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1434221078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434221071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32079c2781598594a849f83c9ee15dd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventoryToggle
-  inventoryPanel: {fileID: 517630792}
 --- !u!1 &1610444050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +3030,10 @@ PrefabInstance:
       propertyPath: BoundingShape2D
       value: 
       objectReference: {fileID: 206257877}
+    - target: {fileID: 7060085609667018017, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
+      propertyPath: inventoryPanel
+      value: 
+      objectReference: {fileID: 517630792}
     - target: {fileID: 7195782283582897528, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3025,10 +3041,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8385269772456411040, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1434221078}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90145bf7dc5102f48ba5d1633b83f6cb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
