@@ -8,6 +8,7 @@ public class InventorySlotUI : MonoBehaviour
     public void SetItem(ItemData item)
     {
         itemIcon.sprite = item.icon;
+        itemIcon.SetNativeSize();
         itemIcon.enabled = true;
     }
 

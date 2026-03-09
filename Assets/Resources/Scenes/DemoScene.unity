@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 939296886}
   - component: {fileID: 939296885}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RightHandItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 1064622836}
   - component: {fileID: 1064622838}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GrabItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,8 +1276,9 @@ GameObject:
   - component: {fileID: 1132883180}
   - component: {fileID: 1132883179}
   - component: {fileID: 1132883181}
+  - component: {fileID: 1132883182}
   m_Layer: 5
-  m_Name: Right Leg Slot
+  m_Name: Right Hip Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,6 +1355,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
   itemIcon: {fileID: 1784268720}
+--- !u!114 &1132883182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132883177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860f11a226b592f4e988bf392c7c4216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSlotUI
+  slotType: 3
 --- !u!1 &1142021097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1517,7 @@ GameObject:
   - component: {fileID: 1180372276}
   - component: {fileID: 1180372275}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LeftHipItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,6 +1592,7 @@ GameObject:
   - component: {fileID: 1242816684}
   - component: {fileID: 1242816683}
   - component: {fileID: 1242816685}
+  - component: {fileID: 1242816686}
   m_Layer: 5
   m_Name: Right Hand Slot
   m_TagString: Untagged
@@ -1656,6 +1671,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
   itemIcon: {fileID: 939296885}
+--- !u!114 &1242816686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242816681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860f11a226b592f4e988bf392c7c4216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSlotUI
+  slotType: 1
 --- !u!1 &1382219969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2122,7 @@ GameObject:
   - component: {fileID: 1782078045}
   - component: {fileID: 1782078044}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LeftHandItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,7 +2197,7 @@ GameObject:
   - component: {fileID: 1784268721}
   - component: {fileID: 1784268720}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RIghtHipItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2334,6 +2362,7 @@ GameObject:
   - component: {fileID: 1850454863}
   - component: {fileID: 1850454862}
   - component: {fileID: 1850454864}
+  - component: {fileID: 1850454865}
   m_Layer: 5
   m_Name: Left Hand Slot
   m_TagString: Untagged
@@ -2412,6 +2441,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
   itemIcon: {fileID: 1782078044}
+--- !u!114 &1850454865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850454860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860f11a226b592f4e988bf392c7c4216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSlotUI
+  slotType: 0
 --- !u!1 &1930531484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,8 +2814,9 @@ GameObject:
   - component: {fileID: 2133143565}
   - component: {fileID: 2133143564}
   - component: {fileID: 2133143566}
+  - component: {fileID: 2133143567}
   m_Layer: 5
-  m_Name: Left Leg Slot
+  m_Name: Left Hip Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2850,6 +2893,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
   itemIcon: {fileID: 1180372275}
+--- !u!114 &2133143567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133143562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860f11a226b592f4e988bf392c7c4216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSlotUI
+  slotType: 2
 --- !u!1001 &7710909683189564768
 PrefabInstance:
   m_ObjectHideFlags: 0

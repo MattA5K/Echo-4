@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class GrabUIManager : MonoBehaviour
 {
     public static GrabUIManager Instance;
+    private ItemData currentItemData; //Store current item's data
+    private InteractableItemObject currentItem; //store current item's world object a.k.a interaction
 
     [SerializeField] private GameObject grabPanel;
     [SerializeField] private Image itemIcon;
@@ -15,8 +17,10 @@ public class GrabUIManager : MonoBehaviour
         Instance = this;
     }
 
-    public void ShowGrabPanel(ItemData data)
+    public void ShowGrabPanel(ItemData data, InteractableItemObject item)
     {
+        currentItemData = data;
+        currentItem = item;
         itemIcon.sprite = data.icon;
         itemIcon.SetNativeSize();
         itemText.text = data.itemName;
@@ -29,5 +33,15 @@ public class GrabUIManager : MonoBehaviour
         itemIcon.sprite = null;
         itemText.text = string.Empty;
 
+    }
+
+    public ItemData GetCurrentItemData()
+    {
+        return currentItemData;
+    }
+
+    public InteractableItemObject GetCurrentItem()
+    {
+        return currentItem;
     }
 }

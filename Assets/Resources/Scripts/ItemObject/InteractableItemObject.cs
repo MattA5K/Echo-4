@@ -8,7 +8,7 @@ public class InteractableItemObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         Debug.Log("Interacting with item");
-        GrabUIManager.Instance.ShowGrabPanel(itemData);
+        GrabUIManager.Instance.ShowGrabPanel(itemData, this);
         PlayerInventoryToggle.Instance.ShowInventory();
     }
 
@@ -16,4 +16,6 @@ public class InteractableItemObject : MonoBehaviour, IInteractable
     {
         return !hasBeenPickedUp;
     }
+
+
 }
