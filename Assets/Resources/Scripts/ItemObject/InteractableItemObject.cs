@@ -4,7 +4,9 @@ public class InteractableItemObject : MonoBehaviour, IInteractable
 {
     public ItemData itemData;
     
-    public bool hasBeenPickedUp = false;
+    public bool worldItemHasBeenPickedUp = false;
+
+
     public void Interact()
     {
         Debug.Log("Interacting with item");
@@ -14,7 +16,16 @@ public class InteractableItemObject : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return !hasBeenPickedUp;
+        return !worldItemHasBeenPickedUp;
+    }
+
+    public void RemoveWorldItem()
+    {
+        if (worldItemHasBeenPickedUp)
+        {
+            Destroy(this.gameObject);
+            PlayerInventoryToggle.Instance.ShowInventory();
+        }
     }
 
 

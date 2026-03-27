@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInventoryToggle : MonoBehaviour
 {
-    [SerializeField] private GameObject inventoryPanel;
+    public GameObject inventoryPanel;
 
     private PlayerInput playerInput;
     private InputAction openInventoryAction;
