@@ -20,6 +20,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         originalSlot = GetComponentInParent<InventorySlotUI>();
         originalPosition = transform.position;
 
+        
+        
+
         if (originalSlot != null)
         {
             draggedItemData = originalSlot.currentItem;
@@ -28,6 +31,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             draggedItemData = GrabUIManager.Instance.GetCurrentItemData();
         }
+
+        
 
         draggingImage = GetComponent<Image>();
         draggingImage.raycastTarget = false;
@@ -41,7 +46,15 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         draggingImage.raycastTarget = true;
+        Destroy(GetComponent<Canvas>());
         bool slotFound = false;
+
+        // disable dragging if slot is empty
+        if (draggedItemData == null)
+        {
+            transform.position = originalPosition;
+            return; //exit early if item is empty
+        }
 
         foreach (GameObject hoveredObject in eventData.hovered)
         {
@@ -80,7 +93,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
 
         transform.position = originalPosition;
-        Destroy(GetComponent<Canvas>());
+        //Destroy(GetComponent<Canvas>());
     }
 }
 
