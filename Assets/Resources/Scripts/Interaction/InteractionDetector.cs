@@ -37,6 +37,7 @@ public class InteractionDetector : MonoBehaviour
             interactableInRange = null;
             interactionIcon.SetActive(false);
             GrabUIManager.Instance.HideGrabPanel();
+            KeycardReaderUIManager.Instance.HideReaderPanel();
             PlayerInventoryToggle.Instance.HideInventory();
         }
     }

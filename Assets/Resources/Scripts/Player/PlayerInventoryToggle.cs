@@ -43,6 +43,7 @@ public class PlayerInventoryToggle : MonoBehaviour
     {
         inventoryPanel.SetActive(false);
         GrabUIManager.Instance.HideGrabPanel();
+        KeycardReaderUIManager.Instance.HideReaderPanel();
 
     }
 

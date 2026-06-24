@@ -1,11 +1,13 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Image draggingImage;
     private InventorySlotUI originalSlot;
+    private KeycardSlotUI originalKeycardSlot;
     private ItemData draggedItemData;
     private Vector3 originalPosition;
 
@@ -18,6 +20,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         // get references
         originalSlot = GetComponentInParent<InventorySlotUI>();
+        originalKeycardSlot = GetComponentInParent<KeycardSlotUI>();
         originalPosition = transform.position;
 
         
@@ -32,7 +35,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             draggedItemData = GrabUIManager.Instance.GetCurrentItemData();
         }
 
-        
+       
+
 
         draggingImage = GetComponent<Image>();
         draggingImage.raycastTarget = false;
@@ -58,15 +62,22 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         foreach (GameObject hoveredObject in eventData.hovered)
         {
+            #region EquipmentSlots Check
             EquipmentSlotUI slot = hoveredObject.GetComponent<EquipmentSlotUI>();
             if (slot != null)
             {
+                //Debug.Log(hoveredObject.name + " | has KeycardSlotUI: " + (hoveredObject.GetComponent<KeycardSlotUI>() != null));
                 foreach (EquipmentSlot compatibleSlot in draggedItemData.compatibleSlots)
                 {
                     if (compatibleSlot == slot.slotType)
                     {
                         InventorySlotUI limbSlot = hoveredObject.GetComponent<InventorySlotUI>();
                         limbSlot.SetItem(draggedItemData);
+
+                        if (originalKeycardSlot != null)
+                        {
+                            originalKeycardSlot.Clear();
+                        }
 
                         if (originalSlot != null && originalSlot != limbSlot)
                         {
@@ -90,10 +101,60 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 }
                 if (slotFound) break;
             }
+            #endregion
+            #region KeycardSlot Check
+            KeycardSlotUI keycardSlot = hoveredObject.GetComponent<KeycardSlotUI>();
+            if (keycardSlot != null)
+            {
+                Debug.Log("Found Keycard slot!");
+                //keycardSlot.currentItem = draggedItemData;
+                keycardSlot.SetItem(draggedItemData);
+                KeycardReaderInteraction reader = KeycardReaderUIManager.Instance.currentReader;
+
+                
+                
+                if (draggedItemData == reader.acceptedKeycard)
+                {
+                    Debug.Log("Correct keycard!"); // replace with actual function
+                    KeycardReaderUIManager.Instance.ReaderAccept();
+
+
+                    if (originalKeycardSlot == null && originalSlot != null)
+                    {
+                        originalSlot.Clear();
+                    }
+                    reader.UnlockDoors();
+                }
+                else
+                {
+                    Debug.Log("Incorrect keycard");
+                    KeycardReaderUIManager.Instance.ReaderDecline();
+
+                    originalSlot.Clear();
+                }
+
+                slotFound = true;
+                break;
+                
+
+                
+            }
+            #endregion
+
         }
 
         transform.position = originalPosition;
+        if(!slotFound && originalKeycardSlot != null)
+        {
+            originalKeycardSlot.RestoreItem();
+        }
         //Destroy(GetComponent<Canvas>());
+    }
+
+    private void ReturnItemPosition()
+    {
+        transform.position = originalPosition;
+        return;
     }
 }
 
