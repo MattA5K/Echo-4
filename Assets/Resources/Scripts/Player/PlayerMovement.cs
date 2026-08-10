@@ -5,17 +5,18 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     [SerializeField] private float moveSpeed;
-    float horizontalMovement;
-    float verticalMovement;
+    private Vector2 moveInput;
 
-
+    private void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
-        rb2d.linearVelocity = new Vector2(horizontalMovement * moveSpeed, verticalMovement * moveSpeed);
+        rb2d.linearVelocity = moveInput * moveSpeed;
     }
     public void Move(InputAction.CallbackContext context)
     {
-        horizontalMovement = context.ReadValue<Vector2>().x;
-        verticalMovement = context.ReadValue<Vector2>().y;
+        moveInput = context.ReadValue<Vector2>();
     }
 }
